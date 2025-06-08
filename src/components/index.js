@@ -13,4 +13,7 @@ export { default as WindowHeader } from './Window/WindowHeader';
 export { default as Terminal } from './Terminal/Terminal';
 
 // StartMenu components
-export { default as StartMenu } from './StartMenu/StartMenu'; 
+export { default as StartMenu } from './StartMenu/StartMenu';
+
+// TextEditor components
+export { default as TextEditor } from './TextEditor/TextEditor'; 

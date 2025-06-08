@@ -8,9 +8,11 @@ import {
   faFileLines, 
   faImages, 
   faMusic, 
-  faComments 
+  faComments,
+  faEdit
 } from '@fortawesome/free-solid-svg-icons';
-import { Terminal } from '../index.js';
+import { Terminal, TextEditor } from '../index.js';
+import { ErrorBoundary } from '../TextEditor';
 
 const MenuContainer = styled.div`
   position: fixed;
@@ -122,20 +124,24 @@ const demoApps = [
     defaultSize: { width: 800, height: 500 }
   },
   {
+    id: 'editor',
+    title: 'Text Editor',
+    icon: faEdit,
+    bgColor: '#8a4dbc',
+    component: (props) => (
+      <ErrorBoundary>
+        <TextEditor {...props} />
+      </ErrorBoundary>
+    ),
+    defaultSize: { width: 800, height: 600 }
+  },
+  {
     id: 'game',
     title: '3D Game',
     icon: faCube,
     bgColor: '#4e5bb0',
     component: () => <div>3D Game component will go here</div>,
     defaultSize: { width: 1024, height: 768 }
-  },
-  {
-    id: 'editor',
-    title: 'Text Editor',
-    icon: faFileLines,
-    bgColor: '#69a1c5',
-    component: () => <div>Text Editor component will go here</div>,
-    defaultSize: { width: 700, height: 600 }
   },
   {
     id: 'gallery',
